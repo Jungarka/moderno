@@ -82,5 +82,58 @@
         font-size: 14px;
     }
 }
+.search{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 533px;
+}
+.search__inner{
+    padding: 155px 0px 100px;         // резервируем место для текста, чтобы если изменится текст, он не вышел за края блока
+    color: #fff;
+    text-align: center;
+    &-title{
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 48px;
+    }
+    &-text{
+        font-weight: 500;
+        font-style: 20px;
+        margin: 28px 0 50px;
+        line-height: 20px;
+    }
+    &-form{
+        max-width: 670px;
+        margin: 0 auto;
+        position: relative;
+        input{
+            display: block;
+            width: 100%;
+            box-shadow: 0px 1px 10px 0px rgba(124, 178, 64, 0.75);
+            border: none;
+            height: 56px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            outline: none;
+            padding: 0 25px 0 60px;
+            &:focus{
+                border: 1px solid #546e7a;
+            }
+            &::placeholder{
+                color: #90a4ae;
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+        button{
+            position: absolute;
+            border: none;
+            background-color: transparent;
+            right: 14px;
+            top: 19px;
 
-
+        }
+    }
+}
