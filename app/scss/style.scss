@@ -2,6 +2,8 @@
 @import 'global';
 @import 'fonts';
 
+// start header
+
 .header__top-inner{
     display: flex;
     justify-content: space-between;
@@ -82,6 +84,10 @@
         font-size: 14px;
     }
 }
+
+// end header
+// start search
+
 .search{
     background-repeat: no-repeat;
     background-size: cover;
@@ -117,7 +123,8 @@
             font-size: 14px;
             font-weight: 500;
             outline: none;
-            padding: 0 25px 0 60px;
+            padding: 0 25px 0 60px;   
+            // исправить паддинг
             &:focus{
                 border: 1px solid #546e7a;
             }
@@ -137,3 +144,281 @@
         }
     }
 }
+
+
+// end search
+// start products
+
+.products{
+    background-color: $grey;
+    padding: 110px 0px;
+}
+.products__inner-btn{
+        text-align: center;
+        margin-bottom: 59px;
+        button{
+            background-color: #fff;
+            border: none;
+            color: $bg;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 13px 22px 10px;
+            outline: none;
+            cursor: pointer;
+            & + button{
+                margin-left: 6px;
+                
+            }
+            &.mixitup-control-active{        // либо делать активную через focus
+                background-color: $red;
+                color: #fff;
+                box-shadow: 0px 2px 5px 0px rgba(202, 215, 228, 0.75);
+            }
+        }
+}
+.products__inner-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.products__item{
+    max-width: 442px;
+    width: 100%;
+    font-weight: 500;
+    background-color: #fff;
+    border: 1px solid $l-grey;
+    border-top: none;
+    margin-bottom: 30px;
+    
+    &-content{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $l-grey;
+        padding: 10px 30px;
+        min-height: 90px;
+    }
+    &-name{
+        max-width: 310px;
+    }
+    &-img{
+        min-height: 250px;
+        background-repeat: no-repeat;
+        display: block;
+        background-position: center;
+        background-size: cover;
+    }
+    &-title{
+        color: $bg;
+        font-size: 18px;
+        padding: 15px 0 5px;
+        display: block;
+    }
+    &-category{
+        color: $green;
+        display: block;
+    }
+    &-price{
+        color: $bg;
+        font-weight: 700;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+
+    }
+    &-info{
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 70px;
+        
+    }
+    &-author{
+        display: flex;
+        align-items: center;
+        max-width: 245px;
+        .avatar{
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            background-position: center;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-right: 13px;
+        }
+        span{
+            font-size: 14px;
+            font-weight: 500;
+            
+        }
+    }
+    &-star{
+        color: #b0bec5;
+        font-size: 12px;
+        span{
+            color: $bg;
+        }
+    }
+}
+.products__bottom-btn{
+    margin-top: 45px;
+    text-align: center;
+    
+    button{
+        font-size: 16px;
+        color: $bg;
+        background-color: #fff;
+        border: none;
+        box-shadow: 0px 1px 3px 0px rgba(204, 216, 228, 0.75);
+        padding: 18px 32px;
+        outline: none;
+        cursor: pointer;
+            & + button{
+                margin-left: 9px;
+                
+            }
+            &.mixitup-control-active{        // либо делать активную через focus
+                background-color: $red;
+                color: #fff;
+                box-shadow: 0px 2px 5px 0px rgba(202, 215, 228, 0.75);
+            }
+    
+    }
+}
+// end products
+
+// start slider
+
+.product-slider{
+    padding: 110px 0 60px;
+    .slick-dots{
+        text-align: center;
+        margin-top: 30px;
+        li{
+            display: inline-block;
+            margin: 0 3px;
+            &.slick-active{
+                button{
+                    background-color: $green;
+                }
+            }
+            
+            button{
+                border-radius: 50%;
+                border: none;
+                width: 16px;
+                height: 16px;
+                background-color: rgb(232, 232, 232);
+                font-size: 0;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// end slider
+// start advantages
+.advantages{
+    background-color: $bg;
+    padding: 120px 0 110px;
+    .title{
+        color: #fff;
+        margin-bottom: 70px;
+    }
+    
+}
+.advantages__inner{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.advantages__item{
+    width: 330px;
+    &-img{
+        width: 113px;
+        height: 113px;
+    }
+    &-title{
+        color: #fff;
+        font-size: 24px;
+        font-weight: 500;
+        margin: 30px 0 20px;
+    }
+    .green{
+        color: $green;
+    }
+    &-text{
+        color: #b0bec5;
+    }
+}
+
+// end advantages
+// start author
+
+.author{
+    padding: 245px 0 295px;
+    display: flex;
+    justify-content: center;
+    
+    &__box{
+        max-width: 653px;
+        background-color: $green;
+        display: flex;
+        justify-content: center;
+        padding: 68px 60px 79px;;
+        
+    }
+    &__title{
+        color: #fff;
+        font-size: 30px;
+        margin-right: 45px;
+        max-width: 260px;
+        line-height: 36px;
+        .span{
+            font-weight: 700;
+        }
+        
+    }
+    &__link{
+        font-size: 18px;
+        color: $bg;
+        padding: 24px 43px;
+        background-color: #fff;
+
+    }
+}
+
+// end author
+// start tutorials
+
+.tutorial{
+    padding: 65px 0 120px;
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        &-box{
+            max-width: 372px;
+            width: 100%;
+        }
+        &-img{
+            min-height: 250px;
+            background-repeat: no-repeat;
+            display: block;
+            background-position: center;
+            background-size: cover;
+        }
+        &-link{
+            background-color: #f8f8f8;
+            font-size: 24px;
+            
+            padding: 37px;
+            text-align: center;
+            a{
+                color: $bg;
+            }
+        }
+    }
+}
+// end tutorials

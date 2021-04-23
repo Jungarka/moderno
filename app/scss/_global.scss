@@ -28,3 +28,24 @@ body{
     margin: 0 auto;
     padding: 0 15px;
 }
+.container-fluid{                 // название контейнера, который растягивается на всю ширину экрана
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+@media (max-width: 720px){          // мы написали media здесь, чтобы эта media перебивала container-fluid, который находится выше
+    .container-fluid{
+        padding: 0 15px;
+    }
+}
+.title{
+    color: $bg;
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.rate-star{
+    display: inline-block;
+    margin-right: 5px;
+}
