@@ -22,6 +22,20 @@ body{
     font-size: 15px;
     line-height: 24px;
     color: $text;
+    height: 100%;
+    overflow-x: hidden;
+    min-width: 320px;
+}
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.content{
+    flex: 1 0 auto;
+}
+.footer{
+	flex: 0 0 auto;
 }
 .container{
     max-width: 1200px;
@@ -47,5 +61,49 @@ body{
 }
 .rate-star{
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 13px;
 }
+.breadcrumbs{
+    background-color: $grey;
+    padding: 50px 0 40px;
+    &__list{
+        overflow-x: auto; // при адаптиве, если будет много хлебных крошек, появится скрол
+        a{
+            color: #b0bec5;
+        }
+    }
+    &__item{
+        position: relative;
+        padding-right: 20px;
+        display: inline-block;
+    }
+    &__item::after{
+        position: absolute;
+        content: '-';
+        color: $green;
+        right: 8px;
+    }
+    &__item:last-child::after{
+        display: none;
+    }
+    &__item:last-child{
+        a,
+        span{
+            color: $bg;
+        }
+    }
+}
+.angle-right{
+    position: relative;
+    padding-left: 15px;
+    &::before{
+        position: absolute;
+        content: "\f105";
+        font-family: 'icomoon';
+        color: $green;
+        left: 0;
+        font-size: 14px;
+    }
+}
+
+
