@@ -1862,6 +1862,119 @@ button.icon{
 }
 // end about
 
+// start contact
+.contact{
+    background-color: $grey;
+    padding-bottom: 137px;
+    &__wrapper{
+        border: solid 1px #cdd4c4;
+    }
+    &__head{
+        color: #444444;
+        font-size: 24px;
+        line-height: 1;
+        padding: 25px 40px;
+        background-color: #fff;
+        border-bottom: solid 1px #cdd4c4;
+        @include f500;
+    }
+    &__inner{
+        background-color: #fff;
+        color: #fff;
+        padding: 33px 39px 15px 40px;
+    }
+    &__map{
+        margin-bottom: 55px;
+    }
+    &__box{
+        display: flex;
+    }
+    &__info{
+        width: 278px;
+        margin-left: 40px;
+        margin-right: 93px;
+        color: #707070;
+        a{
+            color: inherit;
+        }
+    }
+    &__info-title{
+        color: $bg;
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif !important;
+        font-weight: 500;
+        position: relative;
+        padding-bottom: 18px;
+        margin-bottom: 25px;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 44px;
+            height: 4px;
+            background-color: $green;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        &::before{
+            font-family: 'icomoon';
+            position: absolute;
+            color: $green;
+            font-size: 24px;
+            top: -6px;
+            left: -39px;
+        }
+    }
+    &__text{
+        margin-bottom: 35px;
+    }
+    &__form-title{
+        color: $bg;
+        font-size: 24px;
+        @include f500;
+        margin-bottom: 23px;
+
+    }
+    form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    input{
+        background-color: #f1f4f5;
+        border: none;
+        color: $bg;
+        padding: 13px 16px;
+        width: 48%;
+        outline: none;
+        &::placeholder{
+            color: #7a7a7a; 
+        }
+    }
+    &__area{
+        background-color: #f1f4f5;
+        border: none;
+        color: $bg;
+        padding: 13px 16px;
+        width: 100%;
+        height: 193px;
+        margin: 28px 0 22px;
+        resize: none;
+        outline: none;
+    }
+    button{
+        background-color: $green;
+        @include f700;
+        font-size: 16px;
+        color: #fff;
+        border: none;
+        height: 54px;
+        padding: 0 35px;
+        text-transform: uppercase;
+    }
+}
+
+// end contact
 
 
 
