@@ -1486,7 +1486,6 @@ button.icon{
         background-color: #fff;
     }
     .tabs{
-        
         display: flex;
         text-align: center;
         border: solid 1px #dedede;
@@ -1973,9 +1972,104 @@ button.icon{
         text-transform: uppercase;
     }
 }
-
 // end contact
 
+// start settings
+.settings{
+    background-color: $grey;
+    padding-bottom: 152px;
+    &__tabs{
+        display: flex;
+    }
+    .tabs{
+        font-size: 14px;
+        color: #37474f;
+        max-width: 270px;
+        width: 100%;
+        background-color: #fff;
+        border: solid 1px #cdd4c4;
+        border-bottom: none;
+        margin-right: 30px;
+        display: block;
+        height: 100%;
+        span{
+            display: block;
+            border-bottom: solid 1px #cdd4c4;
+            cursor: pointer;
+            padding: 12px 12px 12px 50px;
+            &.active{
+                border-bottom: solid 2px $green;
+                color: #37474f;
+                @include f500;
+                &:before{
+                    color: $green;
+                }
+            }
+            &:before{
+                left: 22px;
+                color: #444444;
+            }
+        }
+    }
+    .tab__settings{
+        background-color: #fff;
+        width: 100%;
+        border: solid 1px #cdd4c4;  
+    }
+    .tab-item{
+        display: none;
+        &:first-child{
+            display: block;
+        }
+    }
+}
+.tab-box{
+    &__title{
+        @include f500;
+        font-size: 24px;
+        color: $bg;
+        border-bottom: solid 1px #cdd4c4;
+        padding: 20px 34px;
+    }
+    &__content{
+        padding: 33px 37px 80px 35px;
+    }
+    &__update{
+        height: 46px;
+        padding: 0 30px;
+        color: #fff;
+        @include f500;
+        background-color: $green;
+        border: none;
+        cursor: pointer;
+        margin-left: 260px;
+        margin-top: 4px;
+    }
+    .settings__line{
+        margin-bottom: 21px;
+        display: flex;
+        align-items: center;
+        label{
+            color: #444;
+            width: 260px;
+        }
+    }
+    input,
+    select{
+        background-color: #f9f9f9;
+        height: 40px;
+        border: solid 1px #cdd4c4;
+        max-width: 536px;
+        width: 100%;
+        color: $bg;
+        outline: none;
+        padding: 0 16px;
+    }
+    select{
+        color: #707070;
+    }
+}
+// end settings
 
 
 @import 'media';
