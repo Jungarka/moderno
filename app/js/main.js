@@ -10,7 +10,30 @@ $(function(){
         slidesToScroll: 4,
         arrows: false,
         dots: true,
-         
+        responsive: [
+            {
+              breakpoint: 1870,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 1445,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            },
+            {
+                breakpoint: 985,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              },
+          ]
+        
     });
 
     $('.js-range-slider').ionRangeSlider({

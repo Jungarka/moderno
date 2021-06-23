@@ -4,7 +4,6 @@
 
 
 // start header
-
 .header__top-inner{
     display: flex;
     justify-content: space-between;
@@ -14,12 +13,12 @@
 .header__text{
     margin-left: auto;
     margin-right: 15px;
-        span{
-            color: $red;
-        }
-        a{
-            color: $text;
-        }
+    span{
+        color: $red;
+    }
+    a{
+        color: $text;
+    }
 }
 .header__box{
     color: #fff;
@@ -64,15 +63,15 @@
     }
 }
 .header__circle{
-    &.active{
-        display: block;
-    }
     display: none;
     width: 34px;
     height: 34px;
     background-color: #f5f5f5;
     border-radius: 50%;
     position: relative;
+    &.active{
+        display: block;
+    }
     &::before{
         position: absolute;
         top: 50%;
@@ -158,7 +157,6 @@
     border-top: none;
     display: flex;
     align-items: center;
-    // padding: 19px 30px 20px 22px;
     padding: 0 23px;
     position: relative;
     transition: all .5s;
@@ -401,8 +399,8 @@
             font-size: 14px;
             color: #fff;
             font-family: 'icomoon';
-            left: 184px;
-            top: 187px;
+            margin-left: 20px;
+            margin-top: 7px;
             content: '\f007';
         }
     }
@@ -412,8 +410,8 @@
             font-size: 14px;
             color: #fff;
             font-family: 'icomoon';
-            left: 184px;
-            top: 239px;
+            margin-left: 20px;
+            margin-top: 7px;
             content: '\f023';
         }
     }
@@ -436,7 +434,6 @@
         color: #fff;
         line-height: 30px;
         background-color: #76ae36;
-        padding: 0 36px 0 65px;
         width: 246px;
         margin-top: 11px;
         padding: 9px 0 11px 65px;
@@ -528,6 +525,12 @@
 // end search
 
 // start products
+.product-slider__wrapper,
+.products__wrapper{
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
 .products{
     background-color: $grey;
     padding: 110px 0px;
@@ -557,17 +560,24 @@
 }
 .products__inner-box{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    margin-left: -30px;
+}
+.products .products__item{
+    flex-basis: calc(25% - 30px);
+    margin-left: 30px;
 }
 .products__item{
     max-width: 442px;
-    width: 100%;
     font-weight: 500;
     background-color: #fff;
     border: 1px solid $l-grey;
     border-top: none;
     margin-bottom: 30px;
+    &:hover{
+        box-shadow: 0px 16px 20px 0px rgba(216, 216, 216, 0.75);          
+    }
     &-content{
         display: flex;
         justify-content: space-between;
@@ -687,7 +697,6 @@
         }
     }
 }
-
 // end slider
 
 // start advantages
@@ -705,7 +714,6 @@
     text-align: center;
 }
 .advantages__item{
-    width: 330px;
     &-img{
         width: 113px;
         height: 113px;
@@ -722,15 +730,21 @@
     &-text{
         color: #b0bec5;
     }
+    & + .advantages__item{
+        margin-left: 15px;
+    }
 }
 // end advantages
 
 // start author
 .author{
-    padding: 245px 0 295px;
     display: flex;
     justify-content: center;
-    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 750px;
+    align-items: center;
     &__box{
         max-width: 653px;
         background-color: $green;
@@ -944,7 +958,7 @@
 }
 // end footer
 
-// start aside
+// start new-items
 .aside{
     &__item{
         background-color: #fff;
@@ -1131,9 +1145,6 @@
         background-color: #fff;
     }
 }
-// end aside
-
-// start product-page__content
 .product-page{
     background-color: $grey;
     padding-bottom: 100px;
@@ -1186,15 +1197,16 @@ button.icon{
         font-size: 18px;
     }
 }
-.product-page__items{
+.product-page__items{      // свойства элементов при плиточном списке
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    margin-left: -30px;
     .product__item{
         background-color: #fff;
-        max-width: 269px;
-        width: 100%;
+        flex-basis: calc(33.3333% - 30px);
         margin-top: 30px;
+        margin-left: 30px;
         &:hover{
             box-shadow: 0px 16px 20px 0px rgba(216, 216, 216, 0.75);
         }      
@@ -1290,10 +1302,11 @@ button.icon{
         }
     }
 }
-.product-page__items{
+.product-page__items{          // свойства элементов при линейном списке
     .product__item{
         &.list{
             max-width: 100%;
+            flex-basis: 100%;
             .product__item-img{
                 width: 240px;
                 float: left;
@@ -1380,7 +1393,7 @@ button.icon{
 .product__item-text{
     display: none;
 }
-// end product-page__content
+// end new-items
 
 // start product-one
 .product-one{
@@ -1399,7 +1412,7 @@ button.icon{
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 16px 0;
+        padding: 16px 20px;
     }
     &__images{
         max-width: 829px;
@@ -1628,53 +1641,40 @@ button.icon{
     option{
         color: #70838d;
         font-size: 13px;
+    }    
+}
+.aside__price-linkbtn{
+    margin: 30px 0;
+    .aside__price-link{
+        background-color: $text;
+        padding-left: 10px;
+        &::before{
+            font-family: 'icomoon';
+            font-size: 16px;
+            color: #fff;
+            padding-right: 8px;
+        }
     }
-    &-link{
+    button{
         font-size: 16px;
-        @include f700;
+        font-family: 'Roboto', sans-serif !important;
+        font-weight: 700;
         color: #fff;
         width: 100%;
         text-align: center;
-        padding: 13px 0;
+        padding: 17px 9px 15px;
         box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
-    }
-    &-awards{
+        border: none;
+        cursor: pointer;
         display: block;
     }
-}
-.price-cart{
-    background-color: $green;
-    margin-top: 28px;
-    padding-left: 10px;
-    position: relative;
-    &::before{
-        position: absolute;
-        content: '\f07a';
-        font-family: 'icomoon';
-        font-size: 16px;
-        color: #fff;
-        top: 12px;
-        left: 40px;
+    .icon-shopping-cart{
+        background-color: $green;
     }
-}
-.price-favor{
-    background-color: #42a5f5;
-    margin: 7px 0;
-    padding-left: 10px;
-    position: relative;
-    &::before{
-        position: absolute;
-        content: '\f08a';
-        font-family: 'icomoon';
-        font-size: 16px;
-        color: #fff;
-        top: 13px;
-        left: 22px;
+    .icon-heart-o{
+        background-color: #42a5f5;
+        margin: 7px 0;
     }
-}
-.price-buy{
-    background-color: $text;
-    margin-bottom: 30px;
 }
 .aside__profile{
     &-image{
@@ -1820,22 +1820,23 @@ button.icon{
         font-weight: 800;
         line-height: 1;
         position: relative;
-        margin-right: 226px;
         &::after{
             position: absolute;
             content: '';
             background-image: url(../images/p404.png);
-            top: 0;
-            right: 33px;
+            margin-left: 20px;
             width: 157px;
             height: 301px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     }
     &__title{
        margin: 65px 0 30px;
        font-family: 'Open Sans', sans-serif;
        font-size: 30px;
-       line-height: 1;
+       line-height: 1.5;
     }
     &__text{
         max-width: 540px;
@@ -1926,7 +1927,7 @@ button.icon{
         display: flex;
     }
     &__info{
-        width: 278px;
+        max-width: 278px;
         margin-left: 40px;
         margin-right: 93px;
         color: #707070;
@@ -2243,7 +2244,6 @@ button.icon{
 }
 .social__item{
     padding: 24px 0 26px 4px;
-    width: 270px;
     display: flex;
     li{
         display: inline-block;
@@ -2550,6 +2550,7 @@ button.icon{
         @include f500;
         padding: 21px 34px;
         border-bottom: solid 1px #d7d7d7;
+        
     }
     &__content{
         padding: 28px 40px 37px 38px;
@@ -2607,31 +2608,37 @@ button.icon{
     &__items{
         color: #444;
         font-size: 13px;
-        height: 42px;
+        min-height: 42px;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 61px 0 20px;
+        padding-left: 20px;
         @include f500;
     }
     &__items:nth-child(odd){
         background-color: #f9f9f9;
-    }
-    &__items:nth-child(1){
-        padding-right: 39px;
     }
     .tab-box__update{
         height: 52px;
         font-size: 16px;
         margin: 11px 0 13px;
     }
+    &__date{
+        width: 136px;
+    }
     &__price{
         @include f700;
+        width: 72px;
+    }
+    &__email{
+        width: 177px;
     }
     &__status{
         color: $green;
+        width: 87px;
     }
+    
     &__status--pending{
         color: #444;
     }
