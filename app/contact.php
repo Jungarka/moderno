@@ -19,7 +19,7 @@
                     <div class="container">
                         <div class="header__top-inner">
                             <div class="header__logo">
-                                <a href="#">
+                                <a href="index.html">
                                     <img src="images/logo.png" alt="">
                                 </a>
                             </div>
@@ -141,14 +141,14 @@
                                     </a>
                                     <div class="user__menu">
                                         <ul>
-                                            <li><a class="angle-right" href="#">Profile Page</a></li>
+                                            <li><a class="angle-right" href="profile.html">Profile Page</a></li>
                                             <li><a class="angle-right" href="#">Portfolio</a></li>
-                                            <li><a class="angle-right" href="#">Account Setting</a></li>
+                                            <li><a class="angle-right" href="setting.html">Account Setting</a></li>
                                             <li><a class="angle-right" href="#">Downloads</a></li>
                                             <li><a class="angle-right" href="#">Wishlist</a></li>
-                                            <li><a class="angle-right" href="#">Upload Item</a></li>
+                                            <li><a class="angle-right" href="upload.html">Upload Item</a></li>
                                             <li><a class="angle-right" href="#">Statement</a></li>
-                                            <li><a class="angle-right" href="#">Withdraws</a></li>
+                                            <li><a class="angle-right" href="withdrawals.html">Withdraws</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -170,12 +170,12 @@
                             </div>
                             <ul class="menu__list">
                                 <li>
-                                    <a href="#">
+                                    <a href="index.html">
                                         Home
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="about.html">
                                         About 
                                     </a>
                                 </li>
@@ -205,12 +205,12 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="new-items.html">
                                         Pages
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="contact.php">
                                         Contact 
                                     </a>
                                 </li>
@@ -224,7 +224,7 @@
                     </div>
                 </div>
             </header>
-            <section class="search page-search" style="background-image: url(images/search-bg.jpg);">          <!-- прописываем фон здесь, чтобы была возможность его менять -->
+            <section class="search page-search" style="background-image: url(images/search-bg.jpg);">
                 <div class="container">
                     <div class="search__inner">
                         <div class="search__inner-text">
@@ -245,7 +245,7 @@
                 <div class="container">
                     <div class="breadcrumbs__inner">
                         <ul class="breadcrumbs__list">
-                            <li class="breadcrumbs__item"><a href="#">Home</a></li>
+                            <li class="breadcrumbs__item"><a href="index.html">Home</a></li>
                             <li class="breadcrumbs__item"><span>Contact US</span></li>
                         </ul>
                     </div>
@@ -274,13 +274,12 @@
                                 </div>
                                 <div class="contact__form">
                                     <div class="contact__form-title">Drop Us A Message</div>
-                                    <form>
-                                        <input type="text" placeholder="Name*" required>
-                                        <input type="email" placeholder="E-mail*" required>
-                                        <textarea class="contact__area" placeholder="Message*" required></textarea>
+                                    <form class="ajax-contact-form" method="POST" action="blocks/sendmail.php">
+                                        <input type="text" placeholder="Name*" name="name" maxlength="20" required>
+                                        <input type="email" name="email" placeholder="E-mail*" maxlength="50" required>
+                                        <textarea class="contact__area" name="message" placeholder="Message*" maxlength="150" required></textarea>
                                         <button class="contact__button" type="submit">Send Message</button>
                                     </form>
-                                    
                                 </div>
                             </div>
                             

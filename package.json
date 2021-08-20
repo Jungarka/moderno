@@ -11,7 +11,8 @@
   "dependencies": {
     "browser-sync": "^2.26.14",
     "normalize.css": "^8.0.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "toastr": "^2.1.4"
   },
   "devDependencies": {
     "@fancyapps/fancybox": "^3.5.7",
