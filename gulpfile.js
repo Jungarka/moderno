@@ -27,6 +27,7 @@ gulp.task('style', function(){
         'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css',
         'node_modules/jquery-form-styler/dist/jquery.formstyler.css',
         'node_modules/jquery-form-styler/dist/jquery.formstyler.theme.css',
+        'node_modules/toastr/build/toastr.css',
     ])
             .pipe(concat('libs.min.css'))
             .pipe(cssmin())
@@ -41,6 +42,7 @@ gulp.task('script', function(){
         'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
         'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
         'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
+        'node_modules/toastr/toastr.js',
     ])
             .pipe(concat('libs.min.js'))
             .pipe(uglify())
@@ -54,16 +56,20 @@ gulp.task('js', function(){
     return gulp.src('app/js/*.js')
         .pipe(browserSync.reload({stream: true}))
 });
+gulp.task('php', function(){
+    return gulp.src('app/**/*.php')
+        .pipe(browserSync.reload({stream: true}))
+});
 gulp.task('browser-sync', function(){
     browserSync.init({
-        server: {
-            baseDir: "app/"
-        }
+        proxy: "moderno",
+        notify: false
     });
 });
 gulp.task('watch', function(){
     gulp.watch('app/scss/**/*.scss', gulp.parallel('sass'))
     gulp.watch('app/*.html', gulp.parallel('html'))
     gulp.watch('app/js/*.js', gulp.parallel('js'))
+    gulp.watch('app/**/*.php', gulp.parallel('php'))
 });
 gulp.task('default', gulp.parallel('style', 'script', 'sass', 'watch', 'browser-sync'))

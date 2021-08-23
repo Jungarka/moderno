@@ -277,12 +277,12 @@
 }
 .header__btn-log--off,
 .header__btn-reg--off{
-    display: none;        // когда мы заходим в учетку, то кнопки login  и register пропадают
+    display: none;
 }
 .header__btn-logout{
-    display: none;      // пока мы не вошли в учетку, кнопки logout нет 
+    display: none;
     &.header__btn-logout--on{
-        display: block;      // как только мы вошли в учетку, кнопка logout появилась
+        display: block;
     }
 }
 .header__btn-menu,
@@ -474,7 +474,7 @@
     }
 }
 .search__inner{
-    padding: 155px 0px 100px;         // резервируем место для текста, чтобы если изменится текст, он не вышел за края блока
+    padding: 155px 0px 100px;
     color: #fff;
     text-align: center;
     &-title{
@@ -503,7 +503,6 @@
             font-weight: 500;
             outline: none;
             padding: 0 60px 0 25px;   
-            // исправить паддинг
             &:focus{
                 border: 1px solid #546e7a;
             }
@@ -530,7 +529,6 @@
     max-width: 1920px;
     margin: 0 auto;
 }
-
 .products{
     background-color: $grey;
     padding: 110px 0px;
@@ -549,9 +547,8 @@
         cursor: pointer;
         & + button{
             margin-left: 6px;
-            
         }
-        &.mixitup-control-active{        // либо делать активную через focus
+        &.mixitup-control-active{
             background-color: $red;
             color: #fff;
             box-shadow: 0px 2px 5px 0px rgba(202, 215, 228, 0.75);
@@ -662,7 +659,7 @@
         & + button{
             margin-left: 9px;
         }
-        &.mixitup-control-active{        // либо делать активную через focus
+        &.mixitup-control-active{
             background-color: $red;
             color: #fff;
             box-shadow: 0px 2px 5px 0px rgba(202, 215, 228, 0.75);
@@ -839,7 +836,6 @@
         font-weight: 700;
         color: #fff;
         font-size: 22px;
-        // для прорисовки разделительной зеленой линии
         padding-bottom: 30px;   
         margin-bottom: 28px;
         position: relative;
@@ -893,9 +889,6 @@
         padding: 0 50px 0 15px;
         background-color: #2f3c43;
         color: #fff;
-        // &:focus{
-        //     border: 1px solid #546e7a;
-        // }
         &::placeholder{
             color: #697378;
             font-size: 14px;   
@@ -2007,6 +2000,7 @@ button.icon{
         height: 54px;
         padding: 0 35px;
         text-transform: uppercase;
+        cursor: pointer;
     }
 }
 // end contact
@@ -2550,7 +2544,6 @@ button.icon{
         @include f500;
         padding: 21px 34px;
         border-bottom: solid 1px #d7d7d7;
-        
     }
     &__content{
         padding: 28px 40px 37px 38px;
@@ -2638,14 +2631,11 @@ button.icon{
         color: $green;
         width: 87px;
     }
-    
     &__status--pending{
         color: #444;
     }
 }
 // end withdrawals
-
-
 
 
 @import 'media';
